@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HowsMyPrivacy - Real-time browser privacy and security scoring with cyberpunk terminal UI">
+  <title>HowsMyPrivacy - Browser Privacy Scanner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand-yellow: #fcc800;
+      --brand-black: #0a0a0a;
+      --cyber-green: #00ff41;
+    }
+
+    body {
+      font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #cccccc;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Scanline effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 3px
+      );
+      pointer-events: none;
+      z-index: 9999;
+      animation: scanlines 8s linear infinite;
+    }
+
+    @keyframes scanlines {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(10px); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .logo {
+      width: 128px;
+      height: 128px;
+      margin: 0 auto 30px;
+      filter: drop-shadow(0 0 20px rgba(252, 200, 0, 0.5));
+    }
+
+    h1 {
+      font-size: 48px;
+      color: var(--brand-yellow);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(252, 200, 0, 0.5);
+      animation: glow-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { text-shadow: 0 0 10px rgba(252, 200, 0, 0.5); }
+      50% { text-shadow: 0 0 30px rgba(252, 200, 0, 0.8); }
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #999999;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border: 2px solid var(--brand-yellow);
+      background: transparent;
+      color: var(--brand-yellow);
+      text-decoration: none;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+      box-shadow: 0 0 20px rgba(252, 200, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--brand-yellow);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
+    }
+
+    .feature {
+      background: rgba(26, 26, 26, 0.8);
+      border: 1px solid #2a2a2a;
+      border-left: 3px solid var(--brand-yellow);
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      border-left-color: var(--brand-yellow);
+      box-shadow: -3px 0 20px rgba(252, 200, 0, 0.3);
+      transform: translateX(5px);
+    }
+
+    .feature h3 {
+      color: var(--brand-yellow);
+      font-size: 20px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .feature p {
+      color: #999999;
+      line-height: 1.8;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      color: var(--cyber-green);
+      font-weight: 700;
+      text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #999999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .screenshot {
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .screenshot img {
+      max-width: 100%;
+      border: 2px solid var(--brand-yellow);
+      box-shadow: 0 0 40px rgba(252, 200, 0, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a2a;
+      margin-top: 80px;
+      color: #666666;
+    }
+
+    footer a {
+      color: var(--brand-yellow);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 10px rgba(252, 200, 0, 0.5);
+    }
+
+    .privacy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 255, 65, 0.1);
+      border: 1px solid var(--cyber-green);
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin: 20px 0;
+      color: var(--cyber-green);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .tagline {
+        font-size: 16px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/HowsMyPrivacy/main/icons/icon128.png" alt="HowsMyPrivacy Logo" class="logo">
+      <h1>HowsMyPrivacy</h1>
+      <p class="tagline">Real-time browser privacy & security scoring with cyberpunk terminal UI</p>
+      
+      <div class="cta-buttons">
+        <a href="https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID" class="btn btn-primary">
+          <span>📦</span>
+          Install on Chrome
+        </a>
+        <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy" class="btn">
+          <span>⭐</span>
+          View on GitHub
+        </a>
+      </div>
+
+      <div class="privacy-badge">
+        🔒 Zero Data Collection • 100% Open Source • Privacy First
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-number">0-100</div>
+        <div class="stat-label">Privacy Score</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Security Categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Privacy Checks</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Data Collection</div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>// Real-time Scoring</h3>
+        <p>Get an instant 0-100 privacy score based on comprehensive analysis of your browser's configuration and the current website's tracking behavior.</p>
+      </div>
+
+      <div class="feature">
+        <h3>// 5 Categories</h3>
+        <p>Cookie Privacy, Tracking Protection, Privacy Settings, Security Headers, and Fingerprinting Detection - all analyzed in seconds.</p>
+      </div>
+
+      <div class="feature">
+        <h3>// Cyberpunk UI</h3>
+        <p>Beautiful terminal-inspired interface with CRT scanlines, neon glows, and monospace fonts. Professional yet distinctive design.</p>
+      </div>
+
+      <div class="feature">
+        <h3>// Detailed Reports</h3>
+        <p>Generate comprehensive HTML reports with specific issues, severity levels, and actionable recommendations for fixing problems.</p>
+      </div>
+
+      <div class="feature">
+        <h3>// 40+ Settings</h3>
+        <p>Fully configurable - toggle individual checks, customize appearance, manage scan history, and export your configuration.</p>
+      </div>
+
+      <div class="feature">
+        <h3>// Zero Tracking</h3>
+        <p>No data collection, no telemetry, no external API calls. Everything runs locally in your browser. Open source and auditable.</p>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2 style="color: var(--brand-yellow); text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 3px;">// Preview</h2>
+      <!-- Add screenshot here after you take it -->
+      <p style="color: #666; text-align: center;">Screenshots coming soon</p>
+    </section>
+
+    <section style="text-align: center; margin: 80px 0;">
+      <h2 style="color: var(--brand-yellow); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 3px;">// Get Started</h2>
+      <p style="color: #999; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Install HowsMyPrivacy from the Chrome Web Store and start protecting your privacy today. 
+        It's free, open source, and respects your privacy completely.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID" class="btn btn-primary">
+          Install Extension
+        </a>
+        <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy#installation" class="btn">
+          Manual Installation
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built with ❤️ for privacy by <a href="https://notfoundsec.com" target="_blank">NotFoundSec</a></p>
+      <p style="margin-top: 20px;">
+        <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy">GitHub</a> • 
+        <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy/issues">Report Bug</a> • 
+        <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy#privacy-policy">Privacy Policy</a>
+      </p>
+      <p style="margin-top: 20px; font-size: 12px;">© 2026 HowsMyPrivacy. MIT License.</p>
+    </footer>
+  </div>
+</body>
+</html>

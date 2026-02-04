@@ -1,0 +1,40 @@
+{
+  "name": "howsmyprivacy-extension",
+  "version": "1.0.0",
+  "description": "Browser extension for real-time privacy and security scoring",
+  "author": "NotFoundSec <support@notfoundsec.com>",
+  "license": "MIT",
+  "homepage": "https://notfoundsec.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/howsmyprivacy-extension.git"
+  },
+  "keywords": [
+    "privacy",
+    "security",
+    "browser-extension",
+    "chrome-extension",
+    "firefox-addon",
+    "cybersecurity",
+    "osint",
+    "tracking-protection",
+    "fingerprinting",
+    "cookies"
+  ],
+  "scripts": {
+    "build:chrome": "bash scripts/build-chrome.sh",
+    "build:firefox": "bash scripts/build-firefox.sh",
+    "build:all": "npm run build:chrome && npm run build:firefox",
+    "pack:chrome": "cd dist/chrome && zip -r ../howsmyprivacy-chrome-v$npm_package_version.zip .",
+    "pack:firefox": "cd dist/firefox && zip -r ../howsmyprivacy-firefox-v$npm_package_version.zip ."
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions"
+  ]
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HowsMyPrivacy - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-section">
+        <img src="../icons/icon48.png" alt="HowsMyPrivacy" class="logo">
+        <div>
+          <h1 class="brand-name">HowsMyPrivacy</h1>
+          <p class="tagline">Extension Settings</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Settings Content -->
+    <main class="content">
+      <section class="settings-section">
+        <h2 class="section-title">// SCAN SETTINGS</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="autoScan" class="setting-label">Auto-scan on page load</label>
+            <p class="setting-description">Automatically analyze privacy when you visit a website</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="autoScan">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="showBadge" class="setting-label">Show badge indicator</label>
+            <p class="setting-description">Display privacy score on extension icon</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="showBadge">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="notifications" class="setting-label">Desktop notifications</label>
+            <p class="setting-description">Show notification alerts for critical privacy issues</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="notifications">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label">Scan delay</label>
+            <p class="setting-description">Wait time before scanning after page load</p>
+          </div>
+          <select id="scanDelay" class="setting-select">
+            <option value="0">Instant</option>
+            <option value="1000">1 second</option>
+            <option value="2000" selected>2 seconds</option>
+            <option value="3000">3 seconds</option>
+            <option value="5000">5 seconds</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2 class="section-title">// PRIVACY CHECKS</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="checkCookies" class="setting-label">Cookie analysis</label>
+            <p class="setting-description">Scan for third-party and tracking cookies</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="checkCookies" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="checkTracking" class="setting-label">Tracking detection</label>
+            <p class="setting-description">Identify analytics and advertising scripts</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="checkTracking" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="checkFingerprinting" class="setting-label">Fingerprinting detection</label>
+            <p class="setting-description">Check for canvas, WebGL, and browser fingerprinting</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="checkFingerprinting" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="checkSecurity" class="setting-label">Security headers</label>
+            <p class="setting-description">Verify HTTPS, CSP, and secure connection settings</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="checkSecurity" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2 class="section-title">// REPORTING</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="detailedReports" class="setting-label">Detailed scan reports</label>
+            <p class="setting-description">Include technical details in reports</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="detailedReports" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="saveHistory" class="setting-label">Save scan history</label>
+            <p class="setting-description">Keep record of previous scans for comparison</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="saveHistory" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label">History retention</label>
+            <p class="setting-description">How long to keep scan history</p>
+          </div>
+          <select id="historyRetention" class="setting-select">
+            <option value="7">7 days</option>
+            <option value="30" selected>30 days</option>
+            <option value="90">90 days</option>
+            <option value="-1">Forever</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2 class="section-title">// APPEARANCE</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label">Interface theme</label>
+            <p class="setting-description">Visual theme for the extension interface</p>
+          </div>
+          <select id="theme" class="setting-select">
+            <option value="cyberpunk" selected>Cyberpunk Terminal</option>
+            <option value="dark">Dark Professional</option>
+            <option value="classic">Classic Light</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="animations" class="setting-label">Enable animations</label>
+            <p class="setting-description">Animated score counters and transitions</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="animations" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="scanlines" class="setting-label">CRT scanline effect</label>
+            <p class="setting-description">Retro terminal visual effect (Cyberpunk theme only)</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="scanlines" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2 class="section-title">// ADVANCED</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="developerMode" class="setting-label">Developer mode</label>
+            <p class="setting-description">Enable console logging and debug information</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="developerMode">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label for="contextMenu" class="setting-label">Context menu integration</label>
+            <p class="setting-description">Add "Scan Privacy" to right-click menu</p>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="contextMenu" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label">Score threshold</label>
+            <p class="setting-description">Minimum score before showing warnings</p>
+          </div>
+          <select id="scoreThreshold" class="setting-select">
+            <option value="40">Poor (40)</option>
+            <option value="60" selected>Fair (60)</option>
+            <option value="80">Good (80)</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2 class="section-title">// DATA</h2>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label">Clear scan history</label>
+            <p class="setting-description">Delete all stored scan results and cache</p>
+          </div>
+          <button id="clearData" class="action-btn danger">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            Clear Data
+          </button>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label">Export settings</label>
+            <p class="setting-description">Download your settings as JSON file</p>
+          </div>
+          <button id="exportSettings" class="action-btn secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Export
+          </button>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2 class="section-title">// ABOUT</h2>
+        
+        <div class="about-content">
+          <div class="about-item">
+            <strong>Version:</strong> 1.0.0
+          </div>
+          <div class="about-item">
+            <strong>Developer:</strong> <a href="https://notfoundsec.com" target="_blank">NotFoundSec</a>
+          </div>
+          <div class="about-item">
+            <strong>License:</strong> MIT
+          </div>
+          <div class="about-item">
+            <strong>Privacy:</strong> No data collection - everything runs locally
+          </div>
+        </div>
+
+        <div class="button-group">
+          <a href="https://github.com/yourusername/howsmyprivacy-extension" target="_blank" class="action-btn secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://notfoundsec.com/support" target="_blank" class="action-btn secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Support
+          </a>
+        </div>
+      </section>
+
+      <!-- Save Indicator -->
+      <div id="saveIndicator" class="save-indicator">
+        <span class="save-icon">✓</span>
+        <span class="save-text">Settings saved</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

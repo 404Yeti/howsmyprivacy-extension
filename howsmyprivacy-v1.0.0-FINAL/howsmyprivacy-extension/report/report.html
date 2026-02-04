@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HowsMyPrivacy - Detailed Report</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-section">
+          <img src="../icons/icon48.png" alt="HowsMyPrivacy" class="logo">
+          <div>
+            <h1 class="brand-name">HowsMyPrivacy</h1>
+            <p class="tagline">Privacy & Security Report</p>
+          </div>
+        </div>
+        <button class="print-btn" id="printBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"/>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Print Report
+        </button>
+      </div>
+    </header>
+
+    <!-- Overall Score Section -->
+    <section class="score-section">
+      <div class="score-card">
+        <div class="score-circle">
+          <svg class="score-ring" width="200" height="200">
+            <circle class="score-ring-bg" cx="100" cy="100" r="90" />
+            <circle class="score-ring-progress" id="scoreRing" cx="100" cy="100" r="90" />
+          </svg>
+          <div class="score-content">
+            <div class="score-value" id="scoreValue">--</div>
+            <div class="score-label" id="scoreLabel">Loading...</div>
+          </div>
+        </div>
+        <div class="score-info">
+          <h2 id="scoreTitle">Analyzing Your Privacy...</h2>
+          <p id="scoreDescription">Calculating your browser's privacy and security posture...</p>
+          <div class="score-meta">
+            <div class="meta-item">
+              <strong>Website:</strong>
+              <span id="websiteUrl">--</span>
+            </div>
+            <div class="meta-item">
+              <strong>Scan Time:</strong>
+              <span id="scanTime">--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Reports -->
+    <section class="categories-section">
+      <h2 class="section-title">Detailed Category Analysis</h2>
+      
+      <!-- Cookie Privacy -->
+      <div class="category-report" id="cookiesReport">
+        <div class="category-header">
+          <div class="category-icon">🍪</div>
+          <div class="category-title">
+            <h3>Cookie Privacy</h3>
+            <div class="category-score-badge" id="cookiesScoreBadge">--/20</div>
+          </div>
+        </div>
+        <div class="category-description">
+          Analyzes third-party cookies, tracking cookies, and cookie management practices.
+        </div>
+        <div class="issues-list" id="cookiesIssues"></div>
+      </div>
+
+      <!-- Tracking Protection -->
+      <div class="category-report" id="trackingReport">
+        <div class="category-header">
+          <div class="category-icon">👁️</div>
+          <div class="category-title">
+            <h3>Tracking Protection</h3>
+            <div class="category-score-badge" id="trackingScoreBadge">--/20</div>
+          </div>
+        </div>
+        <div class="category-description">
+          Checks for tracking scripts, analytics services, and Do Not Track settings.
+        </div>
+        <div class="issues-list" id="trackingIssues"></div>
+      </div>
+
+      <!-- Privacy Settings -->
+      <div class="category-report" id="privacyReport">
+        <div class="category-header">
+          <div class="category-icon">🔒</div>
+          <div class="category-title">
+            <h3>Privacy Settings</h3>
+            <div class="category-score-badge" id="privacyScoreBadge">--/20</div>
+          </div>
+        </div>
+        <div class="category-description">
+          Evaluates WebRTC leaks, HTTPS usage, localStorage, and sensitive APIs.
+        </div>
+        <div class="issues-list" id="privacyIssues"></div>
+      </div>
+
+      <!-- Security Headers -->
+      <div class="category-report" id="securityReport">
+        <div class="category-header">
+          <div class="category-icon">🛡️</div>
+          <div class="category-title">
+            <h3>Security Headers</h3>
+            <div class="category-score-badge" id="securityScoreBadge">--/20</div>
+          </div>
+        </div>
+        <div class="category-description">
+          Checks HTTPS enforcement, mixed content, and Content Security Policy.
+        </div>
+        <div class="issues-list" id="securityIssues"></div>
+      </div>
+
+      <!-- Fingerprinting Protection -->
+      <div class="category-report" id="fingerprintingReport">
+        <div class="category-header">
+          <div class="category-icon">🎭</div>
+          <div class="category-title">
+            <h3>Fingerprinting Protection</h3>
+            <div class="category-score-badge" id="fingerprintingScoreBadge">--/20</div>
+          </div>
+        </div>
+        <div class="category-description">
+          Detects canvas tracking, WebGL fingerprinting, and browser uniqueness.
+        </div>
+        <div class="issues-list" id="fingerprintingIssues"></div>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendations-section">
+      <h2 class="section-title">Top Recommendations</h2>
+      <div id="recommendationsList" class="recommendations-list"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Generated by <strong>HowsMyPrivacy</strong> - A privacy analysis tool by <a href="https://notfoundsec.com" target="_blank">NotFoundSec</a></p>
+      <p class="disclaimer">This report is for informational purposes only. Consult security professionals for comprehensive security audits.</p>
+    </footer>
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>

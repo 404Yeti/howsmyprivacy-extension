@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![HowsMyPrivacy Icon](icons/icon128.png)
+![HowsMyPrivacy Icon](howsmyprivacy-v1.0.0-FINAL/howsmyprivacy-extension/icons/icon16.png)
 
 **Real-time browser privacy & security scoring with a cyberpunk terminal aesthetic**
 

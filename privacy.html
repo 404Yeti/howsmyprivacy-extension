@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HowsMyPrivacy Privacy Policy - Zero data collection policy">
+  <title>Privacy Policy - HowsMyPrivacy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --brand-yellow: #fcc800;
+      --brand-black: #0a0a0a;
+      --cyber-green: #00ff41;
+    }
+
+    body {
+      font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #cccccc;
+      line-height: 1.8;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Scanline effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 3px
+      );
+      pointer-events: none;
+      z-index: 9999;
+      animation: scanlines 8s linear infinite;
+    }
+
+    @keyframes scanlines {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(10px); }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 2px solid var(--brand-yellow);
+      margin-bottom: 60px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 0 15px rgba(252, 200, 0, 0.5));
+    }
+
+    h1 {
+      font-size: 36px;
+      color: var(--brand-yellow);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(252, 200, 0, 0.5);
+    }
+
+    .subtitle {
+      color: #999999;
+      font-size: 16px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--brand-yellow);
+      text-decoration: none;
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      border: 1px solid var(--brand-yellow);
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: var(--brand-yellow);
+      color: var(--brand-black);
+    }
+
+    .last-updated {
+      text-align: center;
+      color: #666666;
+      font-size: 13px;
+      margin-bottom: 40px;
+      padding: 10px;
+      background: rgba(26, 26, 26, 0.5);
+      border-radius: 4px;
+    }
+
+    .tl-dr {
+      background: rgba(0, 255, 65, 0.1);
+      border: 2px solid var(--cyber-green);
+      border-radius: 4px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+
+    .tl-dr h2 {
+      color: var(--cyber-green);
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tl-dr ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tl-dr li {
+      padding: 10px 0;
+      padding-left: 30px;
+      position: relative;
+      color: #cccccc;
+    }
+
+    .tl-dr li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--cyber-green);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    h2 {
+      color: var(--brand-yellow);
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 60px 0 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #2a2a2a;
+    }
+
+    h2::before {
+      content: "// ";
+      color: var(--brand-yellow);
+      opacity: 0.5;
+    }
+
+    h3 {
+      color: #cccccc;
+      font-size: 18px;
+      margin: 30px 0 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #999999;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: #cccccc;
+      font-weight: 700;
+    }
+
+    ul, ol {
+      margin: 20px 0;
+      padding-left: 40px;
+      color: #999999;
+    }
+
+    li {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .emphasis-box {
+      background: rgba(252, 200, 0, 0.1);
+      border-left: 4px solid var(--brand-yellow);
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 4px;
+    }
+
+    .emphasis-box strong {
+      color: var(--brand-yellow);
+      display: block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    code {
+      background: #0a0a0a;
+      color: var(--cyber-green);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: rgba(26, 26, 26, 0.8);
+    }
+
+    th {
+      background: rgba(252, 200, 0, 0.1);
+      color: var(--brand-yellow);
+      padding: 15px;
+      text-align: left;
+      border: 1px solid #2a2a2a;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 15px;
+      border: 1px solid #2a2a2a;
+      color: #999999;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #2a2a2a;
+      margin-top: 80px;
+      color: #666666;
+    }
+
+    footer a {
+      color: var(--brand-yellow);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 10px rgba(252, 200, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      table {
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <header>
+      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/HowsMyPrivacy/main/icons/icon128.png" alt="HowsMyPrivacy Logo" class="logo">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Zero Data Collection - 100% Transparent</p>
+    </header>
+
+    <div class="last-updated">
+      <strong>Last Updated:</strong> February 4, 2026<br>
+      <strong>Effective Date:</strong> February 4, 2026
+    </div>
+
+    <div class="tl-dr">
+      <h2>TL;DR - The Short Version</h2>
+      <ul>
+        <li><strong>We collect ZERO data.</strong> None. Zilch. Nada.</li>
+        <li><strong>Everything runs locally</strong> in your browser</li>
+        <li><strong>No external servers</strong> - no API calls, no tracking</li>
+        <li><strong>No analytics</strong> - we don't know who uses this</li>
+        <li><strong>100% open source</strong> - you can verify this yourself</li>
+        <li><strong>Your privacy is analyzed</strong> but never compromised</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        HowsMyPrivacy ("we", "our", or "the extension") is a browser extension that analyzes your browser's privacy and security posture. This Privacy Policy explains our data practices - or more accurately, our complete <strong>lack</strong> of data collection.
+      </p>
+      <p>
+        We built this extension because we care deeply about privacy. It would be hypocritical for a privacy tool to track you, so we don't. At all.
+      </p>
+    </section>
+
+    <section>
+      <h2>What Data We Collect</h2>
+      <div class="emphasis-box">
+        <strong>NONE. ZERO. NOTHING.</strong>
+        <p>HowsMyPrivacy does not collect, store, transmit, or share any user data whatsoever.</p>
+      </div>
+      <p>
+        To be crystal clear, we do <strong>NOT</strong> collect:
+      </p>
+      <ul>
+        <li>Personally identifiable information (name, email, address, etc.)</li>
+        <li>Browsing history or website URLs</li>
+        <li>IP addresses or location data</li>
+        <li>Cookies or cookie content</li>
+        <li>User behavior or usage statistics</li>
+        <li>Device information or browser fingerprints</li>
+        <li>Any form of analytics or telemetry</li>
+        <li>Crash reports or error logs</li>
+        <li>Search queries or form data</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What Data We Access (But Don't Collect)</h2>
+      <p>
+        There's an important distinction between <strong>accessing</strong> data to analyze it locally and <strong>collecting</strong> data by transmitting it to servers. HowsMyPrivacy accesses certain data to perform privacy analysis, but this data:
+      </p>
+      <ul>
+        <li>Stays entirely in your browser</li>
+        <li>Is never transmitted to external servers</li>
+        <li>Is processed temporarily for analysis</li>
+        <li>Is discarded after analysis (unless you save scan results locally)</li>
+      </ul>
+
+      <h3>Data Accessed for Analysis:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Purpose</th>
+            <th>Storage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cookie Metadata</strong></td>
+            <td>Count cookies and detect third-party trackers</td>
+            <td>Not stored - analyzed in real-time</td>
+          </tr>
+          <tr>
+            <td><strong>Network Requests</strong></td>
+            <td>Identify tracking scripts (Analytics, ads, etc.)</td>
+            <td>Not stored - analyzed in real-time</td>
+          </tr>
+          <tr>
+            <td><strong>Browser Settings</strong></td>
+            <td>Check Do Not Track, WebRTC, privacy settings</td>
+            <td>Not stored - read-only access</td>
+          </tr>
+          <tr>
+            <td><strong>Current Page URL</strong></td>
+            <td>Determine what website is being analyzed</td>
+            <td>Stored locally only if you save scan results</td>
+          </tr>
+          <tr>
+            <td><strong>Security Headers</strong></td>
+            <td>Verify HTTPS, CSP, mixed content</td>
+            <td>Not stored - analyzed in real-time</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="emphasis-box">
+        <strong>Important Note:</strong>
+        <p>Think of HowsMyPrivacy like browser DevTools - it inspects your browser to show you information, but doesn't send that information anywhere. The analysis happens locally and stays local.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Local Storage</h2>
+      <p>
+        HowsMyPrivacy uses your browser's local storage (<code>chrome.storage.local</code>) to store:
+      </p>
+      <ul>
+        <li><strong>Scan Results:</strong> Privacy scores and issues found (only if you enable scan history)</li>
+        <li><strong>User Settings:</strong> Your preferences and configuration options</li>
+        <li><strong>UI State:</strong> Interface preferences (theme, animations, etc.)</li>
+      </ul>
+      <p>
+        This data is stored <strong>exclusively in your browser</strong> on your device. It is:
+      </p>
+      <ul>
+        <li>Never transmitted to external servers</li>
+        <li>Never accessible to us or anyone else</li>
+        <li>Deleted when you uninstall the extension</li>
+        <li>Clearable at any time through extension settings</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>
+        HowsMyPrivacy does <strong>NOT</strong> use any third-party services, including:
+      </p>
+      <ul>
+        <li>No analytics services (Google Analytics, Mixpanel, etc.)</li>
+        <li>No crash reporting tools (Sentry, Bugsnag, etc.)</li>
+        <li>No advertising networks</li>
+        <li>No CDNs for code delivery</li>
+        <li>No external APIs or web services</li>
+        <li>No social media integrations</li>
+      </ul>
+      <p>
+        All code runs locally. No external connections are made. Period.
+      </p>
+    </section>
+
+    <section>
+      <h2>Permissions Explained</h2>
+      <p>
+        HowsMyPrivacy requires certain browser permissions to function. Here's exactly why each permission is needed and how it's used:
+      </p>
+
+      <h3><code>cookies</code></h3>
+      <p>
+        <strong>Why:</strong> To count cookies and identify third-party trackers<br>
+        <strong>What we access:</strong> Cookie metadata (domain, expiration, flags)<br>
+        <strong>What we DON'T access:</strong> Cookie content or values<br>
+        <strong>Data transmission:</strong> None
+      </p>
+
+      <h3><code>storage</code></h3>
+      <p>
+        <strong>Why:</strong> To save your scan results and settings locally<br>
+        <strong>What we store:</strong> Privacy scores, user preferences<br>
+        <strong>Where it's stored:</strong> Your browser only (local storage)<br>
+        <strong>Data transmission:</strong> None
+      </p>
+
+      <h3><code>tabs</code></h3>
+      <p>
+        <strong>Why:</strong> To know which website to analyze<br>
+        <strong>What we access:</strong> Current tab URL<br>
+        <strong>What we DON'T access:</strong> Tab content, history, or other tabs<br>
+        <strong>Data transmission:</strong> None
+      </p>
+
+      <h3><code>webRequest</code></h3>
+      <p>
+        <strong>Why:</strong> To detect tracking scripts and network requests<br>
+        <strong>What we access:</strong> Request URLs and types (read-only)<br>
+        <strong>What we DON'T do:</strong> Modify, block, or intercept requests<br>
+        <strong>Data transmission:</strong> None
+      </p>
+
+      <h3><code>privacy</code></h3>
+      <p>
+        <strong>Why:</strong> To check browser privacy settings<br>
+        <strong>What we access:</strong> Do Not Track, WebRTC settings (read-only)<br>
+        <strong>What we DON'T do:</strong> Modify any settings<br>
+        <strong>Data transmission:</strong> None
+      </p>
+
+      <h3><code>&lt;all_urls&gt;</code> (Host Permission)</h3>
+      <p>
+        <strong>Why:</strong> To analyze privacy on any website you visit<br>
+        <strong>What we access:</strong> Current page for analysis<br>
+        <strong>When it runs:</strong> Only when you click the extension icon or enable auto-scan<br>
+        <strong>Data transmission:</strong> None
+      </p>
+    </section>
+
+    <section>
+      <h2>Data Retention</h2>
+      <p>
+        Since we don't collect data, we don't retain data. However, for data stored locally in your browser:
+      </p>
+      <ul>
+        <li><strong>Scan Results:</strong> Kept until you clear them or uninstall the extension</li>
+        <li><strong>User Settings:</strong> Kept until you reset them or uninstall the extension</li>
+        <li><strong>Scan History:</strong> Auto-deleted based on your retention settings (7/30/90 days or never)</li>
+      </ul>
+      <p>
+        You can manually clear all data at any time through the extension settings.
+      </p>
+    </section>
+
+    <section>
+      <h2>Data Sharing</h2>
+      <p>
+        We don't collect data, so we can't share data. Simple as that.
+      </p>
+      <p>
+        Your privacy analysis results are yours and yours alone. They:
+      </p>
+      <ul>
+        <li>Never leave your browser</li>
+        <li>Are never sent to us or anyone else</li>
+        <li>Are never sold, shared, or monetized</li>
+        <li>Remain completely private</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>
+        HowsMyPrivacy does not collect data from anyone, including children under 13. Since we don't collect any data, we are inherently compliant with COPPA (Children's Online Privacy Protection Act) and similar regulations.
+      </p>
+    </section>
+
+    <section>
+      <h2>International Users</h2>
+      <p>
+        HowsMyPrivacy can be used anywhere in the world. Since all processing happens locally in your browser and no data is transmitted, there are no cross-border data transfer issues. Your data never leaves your device, regardless of your location.
+      </p>
+      <p>
+        We comply with international privacy regulations including:
+      </p>
+      <ul>
+        <li><strong>GDPR</strong> (European Union)</li>
+        <li><strong>CCPA</strong> (California)</li>
+        <li><strong>PIPEDA</strong> (Canada)</li>
+        <li><strong>Privacy Act</strong> (Australia)</li>
+      </ul>
+      <p>
+        Compliance is easy when you don't collect data.
+      </p>
+    </section>
+
+    <section>
+      <h2>Your Rights</h2>
+      <p>
+        Even though we don't collect data, here are your rights:
+      </p>
+      <ul>
+        <li><strong>Right to Access:</strong> All your data is in your browser - you already have full access</li>
+        <li><strong>Right to Deletion:</strong> Clear data through settings or uninstall the extension</li>
+        <li><strong>Right to Portability:</strong> Export your settings as JSON through the settings page</li>
+        <li><strong>Right to Opt-Out:</strong> Not applicable - there's nothing to opt out of</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Open Source Transparency</h2>
+      <p>
+        HowsMyPrivacy is 100% open source. You can verify everything in this privacy policy by:
+      </p>
+      <ul>
+        <li>Reviewing the source code on <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy" style="color: var(--cyber-green);">GitHub</a></li>
+        <li>Inspecting the extension files on your computer</li>
+        <li>Using browser DevTools to monitor network activity (you'll see zero external requests)</li>
+        <li>Checking the manifest.json for required permissions</li>
+      </ul>
+      <p>
+        We encourage security researchers and privacy advocates to audit our code.
+      </p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>
+        If we ever change our data practices (spoiler: we won't, because zero is a pretty good number), we will:
+      </p>
+      <ul>
+        <li>Update this page with the new policy</li>
+        <li>Update the "Last Updated" date at the top</li>
+        <li>Notify users through a release note on GitHub</li>
+        <li>Require explicit consent for any data collection (which won't happen)</li>
+      </ul>
+      <p>
+        You can monitor changes by watching our <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy/commits/main/privacy.html" style="color: var(--cyber-green);">GitHub commit history</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <p>
+        If you have questions about this privacy policy or our data practices (or lack thereof), you can reach us:
+      </p>
+      <ul>
+        <li><strong>Email:</strong> support@notfoundsec.com</li>
+        <li><strong>GitHub Issues:</strong> <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy/issues" style="color: var(--cyber-green);">Open an issue</a></li>
+        <li><strong>Website:</strong> <a href="https://notfoundsec.com" style="color: var(--cyber-green);">notfoundsec.com</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Legal Compliance</h2>
+      <p>
+        This extension complies with:
+      </p>
+      <ul>
+        <li>Chrome Web Store Developer Program Policies</li>
+        <li>General Data Protection Regulation (GDPR)</li>
+        <li>California Consumer Privacy Act (CCPA)</li>
+        <li>Children's Online Privacy Protection Act (COPPA)</li>
+        <li>All applicable privacy and data protection laws</li>
+      </ul>
+      <p>
+        Registered in: United States<br>
+        Developer: NotFoundSec<br>
+        Contact: support@notfoundsec.com
+      </p>
+    </section>
+
+    <div class="emphasis-box">
+      <strong>Our Promise:</strong>
+      <p>
+        We built HowsMyPrivacy to help you understand and improve your privacy. We will never compromise your privacy by collecting your data. That's not just a policy - it's our core principle. If we ever change this, we'll shut down the extension rather than betray your trust.
+      </p>
+    </div>
+
+    <footer>
+      <p>Built with ❤️ for privacy by <a href="https://notfoundsec.com" target="_blank">NotFoundSec</a></p>
+      <p style="margin-top: 20px;">
+        <a href="index.html">Home</a> • 
+        <a href="support.html">Support</a> • 
+        <a href="https://github.com/YOUR_USERNAME/HowsMyPrivacy">GitHub</a>
+      </p>
+      <p style="margin-top: 20px; font-size: 12px;">© 2026 HowsMyPrivacy. MIT License.</p>
+    </footer>
+  </div>
+</body>
+</html>
